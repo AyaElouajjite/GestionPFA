@@ -1,56 +1,61 @@
-# 🎓 GestionPFA — Plateforme de gestion des Projets de Fin d'Année
+# GestionPFA — Plateforme de gestion des Projets de Fin d'Année
 
 ![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-092E20?logo=django&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-4-7952B3?logo=bootstrap&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?logo=sqlite&logoColor=white)
 
-Application web **Django** qui centralise la gestion des **Projets de Fin d'Année (PFA)** : formation des binômes, choix des sujets, dépôt des rapports, échéances et échanges entre étudiants et encadrants.
+Application web Django qui centralise le suivi des Projets de Fin d'Année (PFA) dans un établissement d'enseignement : constitution des binômes, attribution des sujets, dépôt et évaluation des rapports, gestion des échéances et communication entre étudiants et encadrants.
 
----
+## Fonctionnalités
 
-## ✨ Fonctionnalités
+**Étudiants**
+- Constitution des binômes (envoi et acceptation de demandes)
+- Consultation et choix des sujets
+- Dépôt des rapports et livrables
+- Messagerie avec l'encadrant, avec pièces jointes
+- Calendrier des échéances et notifications
 
-### 👩‍🎓 Étudiants
-- Formation de **binômes** (envoi et acceptation de demandes)
-- Consultation et choix des **projets** proposés
-- Dépôt des **rapports** et des livrables
-- **Messagerie** avec l'encadrant (pièces jointes)
-- Calendrier des **échéances** et notifications
-
-### 👨‍🏫 Enseignants
-- Proposition et gestion des **sujets de PFA**
+**Enseignants**
+- Publication et gestion des sujets
 - Encadrement des équipes
-- **Évaluation des rapports** déposés
-- Suivi des **retards** et notifications
-- **Statistiques** et export Excel
+- Évaluation des rapports
+- Suivi des retards
+- Statistiques et export Excel
 
-### 🛡️ Administrateurs
-- Gestion des comptes et des rôles (étudiant, enseignant, admin)
-- Gestion des échéances globales
+**Administrateurs**
+- Gestion des comptes et des rôles
+- Définition des échéances
 
-## 🛠️ Technologies
+## Points techniques
 
-- **Python / Django** (modèle utilisateur personnalisé)
-- **django-crispy-forms** + **Bootstrap 4**
-- **SQLite**
-- **XlsxWriter** pour les exports Excel
+- Projet Django structuré en trois applications : `users`, `pfa_projects`, `pfa_teams`
+- Modèle utilisateur personnalisé avec gestion des rôles (étudiant, enseignant, administrateur)
+- Système de notifications et de détection des retards
+- Classification automatique des messages contenant un rapport
+- Export des statistiques au format Excel avec **XlsxWriter**
+- Commande de gestion personnalisée pour générer des données de test
+- Formulaires mis en forme avec **django-crispy-forms** et Bootstrap 4
 
-## 🏗️ Architecture
+## Stack technique
+
+Python · Django · SQLite · Bootstrap 4 · django-crispy-forms · XlsxWriter
+
+## Architecture
 
 ```
 GestionPFA/
-├── pfa_management/   # Configuration du projet Django
+├── pfa_management/   # Configuration du projet
 ├── users/            # Comptes, rôles et authentification
-├── pfa_projects/     # Projets, rapports, échéances, messages, statistiques
+├── pfa_projects/     # Sujets, rapports, échéances, messagerie, statistiques
 ├── pfa_teams/        # Binômes et demandes d'équipe
 ├── templates/        # Gabarits HTML
 └── manage.py
 ```
 
-## 🚀 Installation
+## Installation
 
-**Prérequis :** Python 3.10+
+**Prérequis :** Python 3.10 ou supérieur.
 
 ```bash
 git clone https://github.com/AyaElouajjite/GestionPFA.git
@@ -63,14 +68,13 @@ venv\Scripts\activate        # Windows
 pip install django django-crispy-forms crispy-bootstrap4 pillow xlsxwriter tabulate
 
 python manage.py migrate
-python manage.py seed_data          # optionnel : données de test
+python manage.py seed_data          # facultatif : données de test
 python manage.py createsuperuser
 python manage.py runserver
 ```
 
-L'application est disponible sur **http://localhost:8000** et l'interface d'administration sur **http://localhost:8000/admin/**.
+L'application est accessible sur `http://localhost:8000` et l'interface d'administration sur `http://localhost:8000/admin/`.
 
-## 👩‍💻 Auteur
+## Contact
 
-**Aya Elouajjite** — [@AyaElouajjite](https://github.com/AyaElouajjite)
-Contact : Aya.Ouajjite@emsi-edu.ma
+**Aya Elouajjite** — [github.com/AyaElouajjite](https://github.com/AyaElouajjite) — Aya.Ouajjite@emsi-edu.ma
